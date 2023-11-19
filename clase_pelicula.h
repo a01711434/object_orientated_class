@@ -7,27 +7,27 @@
 using namespace std;
 
 class Pelicula : public Genero {
-private:
-    // Atributos adicionales de Pelicula
-    string titulo;
-    string director;
-    int iD;
+    private:
+        // Atributos adicionales de Pelicula
+        string titulo;
+        string director;
+        int iD;
 
-public:
-    // Constructores
-    Pelicula();
-    Pelicula(string ti, string di, int id, string _genero);
+    public:
+        // Constructores
+        Pelicula();
+        Pelicula(string ti, string di, int id, string _genero);
 
-    // Métodos
-    void imprimePelicula() const;
+        // Métodos
+        void imprimePelicula() const;
 
-    // Getters y Setters adicionales de Pelicula
-    string getTitulo() const;
-    string getDirector() const;
-    int getID() const;
-    void setTitulo(const string& ti);
-    void setDirector(const string& di);
-    void setID(int id);
+        // Getters y Setters adicionales de Pelicula
+        string getTitulo() const;
+        string getDirector() const;
+        int getiD() const;
+        void setTitulo(const string& ti);
+        void setDirector(const string& di);
+        void setID(int id);
 };
 
 Pelicula::Pelicula() : Genero() {
@@ -59,7 +59,7 @@ string Pelicula::getDirector() const {
     return director;
 }
 
-int Pelicula::getID() const {
+int Pelicula::getiD() const {
     return iD;
 }
 

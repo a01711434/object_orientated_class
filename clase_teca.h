@@ -1,3 +1,5 @@
+#ifndef CLASE_TECA_H
+#define CLASE_TECA_H
 #include <iostream>
 #include <string>
 #include <vector>
@@ -65,3 +67,5 @@ const vector<Pelicula>& VideoTeca::getListaPeliculas() const {
 void VideoTeca::setListaPeliculas(const vector<Pelicula>& nuevaLista) {
     listaPeliculas = nuevaLista;
 }
+
+#endif

@@ -1,88 +1,78 @@
 #ifndef CLASE_PELICULA_H
 #define CLASE_PELICULA_H
-#include <iostream>
-#include <vector>
-#include <string>
 
+#include <iostream>
+#include "clase_caracteristica.h"
 
 using namespace std;
 
-// Primera clase //
-// ================================================== //
-class Pelicula {
+class Pelicula : public Genero {
+private:
+    // Atributos adicionales de Pelicula
+    string titulo;
+    string director;
+    int iD;
 
-    private:
-    //Atributos
-        string titulo;
-        string director;
-        int ID;
+public:
+    // Constructores
+    Pelicula();
+    Pelicula(string ti, string di, int id, string _genero);
 
+    // Métodos
+    void imprimePelicula() const;
 
-    public:
-   //Constructor por omisión:
-    Pelicula ();
-    Pelicula (string ti, string di, int id);
-
-    // Getter
-    string getTitulo () ;
-    string getDirector();
-    int getID () ;
-
-    //Setter
-    void setTitulo (string ti);
-    void setDirector (string di);
-    void setID (int id);
-
-    //Metodos:
-    void imprimePelicula () ;
-
-
+    // Getters y Setters adicionales de Pelicula
+    string getTitulo() const;
+    string getDirector() const;
+    int getID() const;
+    void setTitulo(const string& ti);
+    void setDirector(const string& di);
+    void setID(int id);
 };
 
-//Constructor por omisión default:
-
-Pelicula::Pelicula (){
+Pelicula::Pelicula() : Genero() {
     titulo = "";
     director = "";
-    ID = 0;
+    iD = 0;
 }
 
-Pelicula::Pelicula (string ti, string di, int id){
+Pelicula::Pelicula(string ti, string di, int id, string _genero) : Genero(_genero) {
     titulo = ti;
     director = di;
-    ID = id;
+    iD = id;
 }
 
-// Getter:
-string Pelicula::getTitulo () {
+// Métodos adicionales de Pelicula
+void Pelicula::imprimePelicula() const {
+    cout << "Titulo: " << titulo << endl;
+    cout << "Director: " << director << endl;
+    cout << "ID: " << iD << endl;
+    cout << "Genero: " << getCategoria() << endl;
+}
+
+// Getters y Setters adicionales de Pelicula
+string Pelicula::getTitulo() const {
     return titulo;
 }
 
-string Pelicula::getDirector (){
+string Pelicula::getDirector() const {
     return director;
 }
 
-int Pelicula::getID (){
-    return ID;
+int Pelicula::getID() const {
+    return iD;
 }
 
-//Setter:
-void Pelicula::setTitulo (string ti){
+void Pelicula::setTitulo(const string& ti) {
     titulo = ti;
 }
 
-void Pelicula::setDirector(string di){
+void Pelicula::setDirector(const string& di) {
     director = di;
 }
 
-void Pelicula::setID (int id){
-    ID = id;
+void Pelicula::setID(int id) {
+    iD = id;
 }
 
-void Pelicula::imprimePelicula() {
-    cout << "El titulo de la pelicula es: " << titulo << endl;
-    cout << "El director de la pelicula es: " << director << endl;
-    cout << "El id de la pelicula es: " << ID << endl;
-}
-
-#endif // CLASE_PELICULA_H
+#endif

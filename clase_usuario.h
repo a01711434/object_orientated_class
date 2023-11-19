@@ -1,3 +1,5 @@
+#ifndef CLASE_USUARIO_H
+#define CLASE_USUARIO_H
 // ====================================================================================================================================
 // Segunda clase:
 #include <iostream>
@@ -73,7 +75,9 @@ void Usuario::setUsuario(string cliente){
 
 void Usuario::imprimeUsuario(){
     cout << "Tu nombre es: " << nombre << endl;
-    cout << "Tu edad es: " << edad << "años" << endl;
+    cout << "Tu edad es: " << edad << "anos" << endl;
     cout << "Tu nombre de usuario es: " << nombre_usuario << endl;
 
 }
+
+#endif

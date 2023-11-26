@@ -70,7 +70,7 @@ void VideoTeca::buscarPelicula(const string& titulo) {
     }
 
     if (!encontrada) {
-        cout << "No se encontró ninguna película con el título: " << titulo << endl;
+        cout << "No se encontro ninguna pelicula con el titulo: " << titulo << endl;
     }
 }
 
@@ -108,7 +108,7 @@ void VideoTeca::buscarCancion(const string& titulo) {
     }
 
     if (!encontrada) {
-        cout << "No se encontró ninguna canción con el título: " << titulo << endl;
+        cout << "No se encontro ninguna cancion con el titulo: " << titulo << endl;
     }
 }
 

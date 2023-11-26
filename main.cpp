@@ -38,7 +38,7 @@ int main() {
         Pelicula("Passengers" , 7 , " romance y accion" , "Morten Tyldum"),
         Pelicula("Wall-E" , 8 , " Aventura" , " Andrew Stanton"),
         Pelicula("Los Increibles" , 9 ," accion" , " Jason Lee"),
-        Pelicula (" Matrix" , 10 , " Ciencia ficcion " , " Lana Wachoswki" ),
+        Pelicula ("Matrix" , 10 , " Ciencia ficcion " , " Lana Wachoswki" ),
     };
 
     vector<Pelicula> peliculas = peliculasPree;
@@ -77,11 +77,11 @@ int main() {
     }
 
     vector<Musica> cancionesPree = {
-        Musica ("Shakira:BZRP Music Sessions, Vol. 53", 1 , "Dance-pop", "Bizarrap & Shakira"),
-        Musica ("Primera Cita", 27 , " Regional" , " Carin Leon "),
-        Musica (" Ella baila sola " , 15 , " Musica latina " , " Eslabon Armado & Peso Pluma "),
-        Musica (" TQG ", 28 , " Musica latina " , " Karol G & Sakira "),
-        Musica (" Desafiando al destino " , 26 , " balada " , " Maria Becerra "),
+        Musica ("Shakira:BZRP", 1 , "Dance-pop", "Bizarrap & Shakira"),
+        Musica ("Primera cita", 27 , "Regional" , " Carin Leon "),
+        Musica ("Ella baila sola" , 15 , " Musica latina " , " Eslabon Armado & Peso Pluma "),
+        Musica ("TQG", 28 , " Musica latina " , "Karol G & Sakira "),
+        Musica ("Desafiando al destino" , 26 , " balada " , " Maria Becerra "),
 
     };
 

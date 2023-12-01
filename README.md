@@ -2,7 +2,7 @@
 
 ## Descripción del Problema
 
-El problema a abordar es la gestión efectiva de un negocio de alquiler de películas. Esto implica llevar un registro preciso de las películas disponibles en el catálogo, el estado (si se encuentra en el catálogo o no) y la información de los usuarios del sistema.
+El problema a abordar es la gestión efectiva de un negocio de alquiler de películas. Esto implica llevar un registro preciso de las películas y canciones disponibles en el catálogo y la información de los usuarios del sistema.
 
 ## Funcionalidades
 
@@ -11,15 +11,41 @@ El problema a abordar es la gestión efectiva de un negocio de alquiler de pelí
 - **Registro de Clientes:** Permite agregar nuevos clientes al sistema, incluyendo su información.
 - **Catálogo de Usuarios:** Permite visualizar los usuarios en el sistema.
 - **Catálogo de Canciones:** Permite visualizar las canciones en el catálogo con toda su información.
-- **Agregar Canciones:** Permite agregar canciones a la videoTeca.
-- **Buscar canciones y peliculas:** Permite encontrar alguna pelicula o canción en la videoteca. 
+- **Agregar Canciones:** Permite agregar canciones.
+- **Registro de Tickets:** Permite agregar tickets a los clientes, incluyendo su información.
+
 
 ## Instrucciones de Uso
+1.  **Agregar un Usuario:**
+    -   Selecciona la opción 1.
+    -   Ingresa el nombre, edad y nombre de usuario del cliente.
+    -   Si deseas crear un ticket para este usuario, ingresa 1; de lo contrario, ingresa 0.
+    -   Si seleccionas 1, ingresa los días de renta para el ticket.
+    
+2.  **Agregar una Canción:**
+    -   Selecciona la opción 2.
+    -   Ingresa el título, género y cantante de la canción.
+    -   Puedes agregar varias canciones en una sesión.
+    
+3.  **Agregar una Película:**
+    -   Selecciona la opción 3.
+    -   Ingresa el título, género y director de la película.
+    -   Puedes agregar varias películas en una sesión.
+    
+4.  **Imprimir Lista de Canciones:**
+    -   Selecciona la opción 4.
+    -   Verás la lista de canciones con sus títulos y cantantes.
+  
+5.  **Imprimir Lista de Usuarios:**
+    -   Selecciona la opción 5.
+    -   Verás la lista de usuarios con sus nombres, nombres de usuario y edades.
+    
+6.  **Imprimir Lista de Películas:**
+    -   Selecciona la opción 6.
+    -   Verás la lista de películas con sus títulos y directores.
+    
+7.  **Salir del Programa:** 
+    -   Selecciona la opción 7.
+    -   El programa se cerrará.
 
-1. El usuario deberá agregar la cantidad de películas que desea añadir, luego procederá a ingresar el título de la película, el nombre del director, el ID de la película y el género de clasificación.
-2. Luego, el usuario deberá agregar la cantidad de canciones que desea añadir, proporcionando detalles como el título de la canción, el ID de la canción, el cantante de la canción y el género.
-3. Posteriormente, el usuario deberá indicar cuántos usuarios quiere añadir, ingresando el nombre completo, la edad y el nombre de usuario.
-4. El catálogo de películas y canciones se desplegará, permitiendo buscar y explorar los elementos.
-5. A continuación, el catálogo de usuarios se mostrará, proporcionando información sobre los usuarios en el sistema.
-
-Nota: Si el programa se detiene, presiona Enter para continuar al siguiente paso.
+Nota: El programa no acepta entradas con espacio, por lo que favor de ingresar solamente una palabra o separarla con guion bajo. 

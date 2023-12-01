@@ -3,9 +3,8 @@
 #include <vector>
 #include "clase_pelicula.h"
 #include "clase_usuario.h"
-#include "clase_teca.h"
 #include "clase_multimedia.h"
-#include "clase_usuarioTeca.h"
+#include "Ticket.h"
 #include "clase_musica.h"
 
 /*
@@ -22,179 +21,126 @@
    Creación 2 de noviembre
    Modificación 17 de noviembre
    Modificación 25 de noviembre
+   Modificación 30 de nomviembre
 */
 
 using namespace std;
 
 int main() {
-    //Crear un vector con peliculas preexistentes:
-    vector<Pelicula> peliculasPree = {
-        Pelicula("Titanic", 1 ," romance" , " James Cameron"),
-        Pelicula ("El padrino", 2 ," accion" , " Francis Ford"),
-        Pelicula("Interestella", 3 ," accion" , " Christopher Nola"),
-        Pelicula("Man of Steel", 4 ," accion" , " Zack Snyder"),
-        Pelicula("Star Treck", 5 , " accion" , " J. J. Abrams"),
-        Pelicula ("Star Wars: Episode Iv" , 6 , " ciencia ficcion" , " George Lucas"),
-        Pelicula("Passengers" , 7 , " romance y accion" , "Morten Tyldum"),
-        Pelicula("Wall-E" , 8 , " Aventura" , " Andrew Stanton"),
-        Pelicula("Los Increibles" , 9 ," accion" , " Jason Lee"),
-        Pelicula ("Matrix" , 10 , " Ciencia ficcion " , " Lana Wachoswki" ),
-    };
+    vector<Musica> listaCanciones;
+    vector<Usuario> listaUsuarios;
+    vector<Pelicula> listaPeliculas;
 
-    vector<Pelicula> peliculas = peliculasPree;
+    bool sigue = true;
+    int opcion;
+    while(sigue == true){
+        cout << "Inserta 1 si quieres agregar un usuario" << endl;
+        cout << "Inserta 2 si quieres agragar una cancion" << endl; 
+        cout << "Inserta 3 si quieres agregar una pelicula " << endl;
+        cout << "Inserta 4 si quieres imprimir la lista cancion " << endl; 
+        cout << "Inserta 5 si quieres imprimir la lista de Usuarios " << endl; 
+        cout << "Inserta 6 si quieres imprimir la lista de peliculas " << endl; 
+        cout << "Inserta 7 si quieres salir del programa: " << endl;
+        cin >> opcion;
+        if(opcion == 1){
+            bool crear_usuario = true;
+            string nombre, nombre_usuario;
+            int edad, crear_ticket;
+            while (crear_usuario = true){
+                cout << "Ingresa tu nombre: " << endl;
+                cin >> nombre; 
+                cout << "Ingresa tu edad: " << endl;
+                cin >> edad;
+                cout << "Ingresa tu nombre de usuario (sin espacios): " << endl;
+                cin >> nombre_usuario;
+                Usuario cliente (nombre,edad,nombre_usuario);
+                listaUsuarios.push_back(cliente);
 
-    int numPeliculas;
+                cout << "Quieres crear un ticket con este usuario? (1 = si) (0 = no): " << endl;
+                cin >> crear_ticket;
+                if (crear_ticket == 1){
+                    int iDTicket, diasRenta, i = 1;
+                    iDTicket = i;
+                    cout << "Ingresa los dias de renta: " << endl;
+                    cin >> diasRenta;
+                    Ticket t2(cliente,iDTicket,diasRenta);
+                    cout << "El ticket es de: " << t2.getNombreUsuario() << ". Los dias de renta son: " << t2.getDiasRenta() << ". El ID del ticket es: " << t2.getIdTicket() << endl;                    
+                } else {
+                    break;
+                } 
+            }            
+        }
+        else if(opcion ==2){
+            bool crea = true;
+            string titulo, genero,cantante;
+            int iD, i = 0;
+            while(crea == true){
+                
+                int opcion;
+                iD =i;
+                cout <<"Ingrese titulo"<<endl;
+                cin >> titulo;
+                cout <<"Ingrese genero"<<endl;
+                cin >> genero;
+                cout <<"Ingrese cantante"<<endl;
+                cin >> cantante;
+                listaCanciones.push_back(Musica(titulo, iD, genero, cantante));
 
-    cout << "Cuantas peliculas quieres crear? ";
-    cin >> numPeliculas;
+                i++;
+                cout << "Quieres poner otra cancion? (1 = si, 0 = no)"<<endl;
+                cin>> opcion;
+                if(opcion == 0){
+                    crea = false;
+                }
+            }
 
-    cin.ignore(); // Limpiar el buffer de entrada despues de leer el numero de peliculas
+        }
+        else if (opcion == 3){
+            bool crea_pelicula = true;
+            string titulo, genero,director;
+            int iD, i = 0;
+            while(crea_pelicula == true){
+                
+                int opcion;
+                iD =i;
+                cout <<"Ingrese titulo: "<<endl;
+                cin >> titulo;
+                cout <<"Ingrese genero: "<<endl;
+                cin >> genero;
+                cout <<"Ingrese director: "<<endl;
+                cin >> director;
+                listaPeliculas.push_back(Pelicula(titulo,iD,genero,director));
 
-
-    for (int i = 0; i < numPeliculas; ++i) {
-        string titulo, director, genero;
-        int iD;
-
-        cout << "Escribe el titulo de la pelicula: ";
-        getline(cin, titulo);
-
-        cout << "Escribe el nombre del director de la pelicula: ";
-        getline(cin, director);
-
-        cout << "Escribe el ID de la pelicula: ";
-        cin >> iD;
-
-        cin.ignore(); // Limpiar el buffer despues de leer el ID
-
-        cout << "Escribe el genero de la pelicula: ";
-        getline(cin, genero);
-
-        cout << "---------------------------------------" << endl;
-
-        // Crear una instancia de Pelicula, que hereda de Multimedia
-        Pelicula pelicula(titulo, iD, genero, director);
-        peliculas.push_back(pelicula);
+                i++;
+                cout << "Quieres poner otra pelicula? (1 = si, 0 = no)"<<endl;
+                cin>> opcion;
+                if(opcion == 0){
+                    crea_pelicula = false;
+                }
+            }
+        }
+        else if (opcion == 4){
+            for (const auto& cancion : listaCanciones) {
+                cout << "El titulo de la cancion es: "<<cancion.getTitulo() << ". El cantante de esa cancion es: " << cancion.getCantante() << endl;
+            }
+        }
+        else if (opcion == 5){
+            for (const auto& usuarios : listaUsuarios){
+                cout << "El nombre del usuario es: " << usuarios.getNombre() << ". El nombre de usuario es: " << usuarios.getNombreUsuario() << ". La edad del usuario es: " << usuarios.getEdad() << endl;
+            }
+        }
+        else if (opcion == 6){
+            for (const auto& pelicula : listaPeliculas){
+                cout << "El titulo de la película es: " << pelicula.getTitulo() << ". El director de la pelicula es: " << pelicula.getDirector() << endl;
+            }
+        }
+        else if (opcion == 7){
+            sigue = false;
+        }
+        else{
+            cout <<"Opcion incorrecta"<< endl;
+        }
     }
-
-    vector<Musica> cancionesPree = {
-        Musica ("Shakira:BZRP", 1 , "Dance-pop", "Bizarrap & Shakira"),
-        Musica ("Primera cita", 27 , "Regional" , " Carin Leon "),
-        Musica ("Ella baila sola" , 15 , " Musica latina " , " Eslabon Armado & Peso Pluma "),
-        Musica ("TQG", 28 , " Musica latina " , "Karol G & Sakira "),
-        Musica ("Desafiando al destino" , 26 , " balada " , " Maria Becerra "),
-
-    };
-
-    vector<Musica> canciones = cancionesPree; //inicializamos el vector con cancionesPree
-    // Añadir al vector canciones
-    int numCanciones;
-
-    cout << "Cuantas canciones quieres crear? ";
-    cin >> numCanciones;
-
-    cin.ignore(); // Limpiar el buffer de entrada despues de leer el numero de canciones
-
-
-    for (int i = 0; i < numCanciones; ++i) {
-        string titulo, cantante, genero;
-        int iD;
-
-        cout << "Escribe el titulo de la cancion: ";
-        getline(cin, titulo);
-
-        cout << "Escribe el nombre del cantante de la cancion: ";
-        getline(cin, cantante);
-
-        cout << "Escribe el ID de la cancion: ";
-        cin >> iD;
-
-        cin.ignore(); // Limpiar el buffer despues de leer el ID
-
-        cout << "Escribe el genero de la cancion: ";
-        getline(cin, genero);
-
-        cout << "---------------------------------------" << endl;
-
-        // Crear una instancia de Musica, que hereda de Multimedia
-        Musica cancion(titulo, iD, genero, cantante);
-        canciones.push_back(cancion);
-    }
-
-    // Crear una instancia de Usuario
-    int numUsuarios;
-    cout << "Cuantos usuarios quieres anadir?: ";
-    cin >> numUsuarios;
-
-    cin.ignore();
-
-    vector<Usuario> usuarios;
-
-    for (int i = 0; i < numUsuarios; ++i) {
-        string nombreCompleto, nombreUsuario;
-        int edad;
-
-        cout << "Escribe tu nombre completo: ";
-        getline(cin, nombreCompleto);
-
-        cout << "Escribe tu edad: ";
-        cin >> edad;
-
-        cin.ignore(); // Limpiar el buffer despues de leer la edad
-
-        cout << "Escribe tu nombre de usuario: ";
-        getline(cin, nombreUsuario);
-
-        cout << "-----------------------------------" << endl;
-
-        Usuario usuario(nombreCompleto, edad, nombreUsuario);
-        usuarios.push_back(usuario); // Añadir el usuario al vector
-    }
-
-    // Crear una instancia de VideoTeca
-    VideoTeca miVideoTeca;
-
-    // Agregar todas las peliculas al catalogo de la VideoTeca
-    for (const auto& pelicula : peliculas) {
-        miVideoTeca.agregarPelicula(pelicula);
-    }
-
-    // Mostrar el catalogo de la VideoTeca
-    miVideoTeca.mostrarCatalogoP();
-
-    for (const auto& cancion : canciones){
-        miVideoTeca.agregarCancion(cancion);
-    }
-
-    miVideoTeca.mostrarCatalogoC();
-
-    // Buscar una pelicula por titulo en la VideoTeca
-    string tituloBuscar;
-    cin.ignore(); // Limpiar el buffer despues de leer el nombre de usuario
-    cout << "Escribe el titulo de la pelicula a buscar: ";
-    getline(cin, tituloBuscar);
-    miVideoTeca.buscarPelicula(tituloBuscar);
-
-    // Buscar una cancion por titulo en la VideoTeca
-    string tituloCancion;
-    cin.ignore();
-    cout << "Escribe el titulo de la cancion a buscar: ";
-    getline(cin, tituloCancion);
-    miVideoTeca.buscarCancion(tituloCancion);
-
-    // Crear una instancia de UsuarioTeca
-    UsuarioTeca miUsuarioTeca;
-
-    for (const auto& usuario : usuarios) {
-        miUsuarioTeca.agregarUsuario(usuario);
-    }
-
-    miUsuarioTeca.mostrarUsuarios();
-
-    string usuarioBuscar;
-    cin.ignore();
-    cout << "Escribe el nombre del usuario: ";
-    getline(cin, usuarioBuscar);
-    miUsuarioTeca.buscarUsuario(usuarioBuscar);
-
+    
     return 0;
 }

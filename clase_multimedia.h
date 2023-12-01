@@ -9,6 +9,7 @@ class Multimedia {
         string titulo;
         int iD;
         string genero;
+        
     
     public:
         //constructor

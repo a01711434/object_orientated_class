@@ -1,72 +1,52 @@
 #ifndef CLASE_USUARIO_H
 #define CLASE_USUARIO_H
-
 #include <iostream>
-#include <string>
+#include<string>
 
 using namespace std;
 
-class Usuario {
-private:
-    string nombre;
-    int edad;
-    string nombre_usuario;
+class Usuario{
+    private:
+        //Atributos
+        string nombre;
+        int edad;
+        string nombre_usuario;
+    public:
+        Usuario(){}; //Constructor por default
+        // Constructor con parametros 
+        Usuario (string nom, int _edad, string nom_Usuario){
+            this-> nombre = nom;
+            this-> edad = _edad;
+            this-> nombre_usuario = nom_Usuario;
+        }
+        // getters
+        string getNombre(){
+            return nombre;
+        }
+        int getEdad(){
+            return edad;
+        }
+        string getNomUsuario(){
+            return nombre_usuario;
+        }
+        //setters
+        void setNombre(string nom){
+            this-> nombre = nom;
+        }
+        void setEdad(int _edad){
+            this-> edad = _edad;
+        }
+        void setNombreUsuario(string nom_Usuario){
+            this-> nombre_usuario = nom_Usuario;
+        }
+        //Imprime el usuario 
+        void imprimirUsuario(){
+            cout << "Nombre: " << getNombre() << endl;
+            cout << "Edad: " << getEdad() << endl;
+            cout << "Nombre usuario: " << getNomUsuario() << endl;
+        }
 
-public:
-    Usuario();
-    Usuario(string renombre, int anos, string cliente);
-
-    string getNombre() const;
-    int getEdad() const;
-    string getNombreUsuario() const;
-
-    void setNombre(string renombre);
-    void setEdad(int anos);
-    void setUsuario(string cliente);
-
-    void imprimeUsuario() const;
 };
 
-Usuario::Usuario() {
-    nombre = "";
-    edad = 0;
-    nombre_usuario = "";
-}
-
-Usuario::Usuario(string renombre, int anos, string cliente) {
-    nombre = renombre;
-    edad = anos;
-    nombre_usuario = cliente;
-}
-
-string Usuario::getNombre() const {
-    return nombre;
-}
-
-int Usuario::getEdad() const {
-    return edad;
-}
-
-string Usuario::getNombreUsuario() const {
-    return nombre_usuario;
-}
-
-void Usuario::setNombre(string renombre) {
-    nombre = renombre;
-}
-
-void Usuario::setEdad(int anos) {
-    edad = anos;
-}
-
-void Usuario::setUsuario(string cliente) {
-    nombre_usuario = cliente;
-}
-
-void Usuario::imprimeUsuario() const {
-    cout << "Tu nombre es: " << nombre << endl;
-    cout << "Tu edad es: " << edad << " años" << endl;
-    cout << "Tu nombre de usuario es: " << nombre_usuario << endl;
-}
 
 #endif

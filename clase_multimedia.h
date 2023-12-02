@@ -1,68 +1,43 @@
 #ifndef CLASE_MULTIMEDIA_H
 #define CLASE_MULTIMEDIA_H
 #include <iostream>
+#include <string>
 
 using namespace std;
 
 class Multimedia {
-    protected: //atributos de mi clase padre
+    protected: // Herencia
+        // Atributos    
         string titulo;
         int iD;
         string genero;
-        
-    
-    public:
-        //constructor
-        Multimedia ();
-        Multimedia (string _titulo, int _iD, string _genero);
-
-        // getters:
-        string getTitulo() const;
-        int getID() const;
-        string getGenero() const;
-
-        //setters:
-        void setTitulo(const string& _titulo);
-        void setID(int);
-        void setGenero(const string& _genero);
-
+    public: 
+        Multimedia(){}; // Constructor por default
+        // Constructor con parametros
+        Multimedia(string ti, int id, string gene){
+            this-> titulo = ti;
+            this-> iD = id;
+            this-> genero = gene;
+        }
+        // getters
+        string getTitulo(){
+            return titulo;
+        }
+        int getId (){
+            return iD;
+        }
+        string getGenero (){
+            return genero;
+        }
+        // setter
+        void setTitulo(string ti){
+            this-> titulo = ti;
+        }
+        void setID (int id){
+            this -> iD = id;
+        }
+        void setGenero(string gene){
+            this-> genero = gene;
+        }
 };
-
-Multimedia::Multimedia(){
-    titulo = "";
-    iD = 0;
-    genero = "";
-}
-
-Multimedia::Multimedia(string _titulo, int _iD, string _genero){
-    titulo = _titulo;
-    iD = _iD;
-    genero = _genero;
-}
-
-//Getters:
-string Multimedia::getTitulo() const{
-    return titulo;
-}
-
-int Multimedia::getID() const{
-    return iD;
-}
-
-string Multimedia::getGenero() const{
-    return genero;
-}
-
-void Multimedia::setTitulo(const string& _titulo){
-    titulo = _titulo;
-}
-
-void Multimedia::setID (int _iD){
-    iD = _iD;
-}
-
-void Multimedia::setGenero (const string& _genero){
-    genero = _genero;
-}
-
-#endif 
+#endif

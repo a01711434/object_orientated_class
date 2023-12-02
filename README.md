@@ -9,10 +9,10 @@ El problema a abordar es la gestión efectiva de un negocio de alquiler de pelí
 - **Catálogo de Películas:** Permite visualizar y encontrar en el catálogo una película.
 - **Agregar Películas:** Permite a los usuarios agregar nuevas películas al catálogo, ingresando detalles como título, director y ID.
 - **Registro de Clientes:** Permite agregar nuevos clientes al sistema, incluyendo su información.
-- **Catálogo de Usuarios:** Permite visualizar los usuarios en el sistema.
-- **Catálogo de Canciones:** Permite visualizar las canciones en el catálogo con toda su información.
+- **Catálogo de Usuarios:** Permite visualizar los usuarios en el sistema y buscar algun usuario por medio de su nombre.
+- **Catálogo de Canciones:** Permite visualizar las canciones en el catálogo con toda su información y buscar alguna cancion por medio de su titulo
 - **Agregar Canciones:** Permite agregar canciones.
-- **Registro de Tickets:** Permite agregar tickets a los clientes, incluyendo su información.
+- 
 
 
 ## Instrucciones de Uso
@@ -43,9 +43,23 @@ El problema a abordar es la gestión efectiva de un negocio de alquiler de pelí
 6.  **Imprimir Lista de Películas:**
     -   Selecciona la opción 6.
     -   Verás la lista de películas con sus títulos y directores.
-    
-7.  **Salir del Programa:** 
-    -   Selecciona la opción 7.
+7.  **Mostrar el catalogo de canciones, usuarios y peliculas:** 
+    - Selecciona la opcion 7.
+    - Verás el catalogo de canciones, usuarios y peliculas que están en el sistema.
+8.  **Buscar una película:**
+   - Selecciona la opcion 8.
+   - Ingresarás el nombre de la pelicula a buscar.
+   - Verás si se encuentra en el sistema. 
+9.  **Buscar una canción:**
+     - Selecciona la opción 9.
+     - Ingresarás el nombre de la canción a buscar.
+     - Verás si se encuentra en el sistema.
+10.  **Buscar un usuario:**
+     - Selecciona la opcion 10.
+     - Ingresarás el nombre del usuario a buscar.
+     - Verás si se encuentra en el sistema.
+11.  **Salir del Programa:** 
+    -   Selecciona la opción 11.
     -   El programa se cerrará.
 
 Nota: El programa no acepta entradas con espacio, por lo que favor de ingresar solamente una palabra o separarla con guion bajo. 

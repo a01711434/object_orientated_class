@@ -38,7 +38,7 @@ int main() {
     int opcion;
     string encontrar;
     Teca miTeca;
-    
+
 
     while (sigue == true) {
         // Usuario elige que opcion quiere usar
@@ -73,7 +73,7 @@ int main() {
                 Usuario nuevoUsuario(nombre,edad,nombre_usuario);
                 miTeca.agregarUsuario(nuevoUsuario);
 
-              
+
                 //Se pregunta se quiere añadir otro usuario
                 cout << "Quieres agregar otro usuario? (1 = si, 0 = no)" << endl;
                 cin >> otro_usuario;
@@ -81,7 +81,7 @@ int main() {
                     crear_usuario = false;
                 }
             }
-        } 
+        }
         // Si el usuario elie la opción 2
         else if (opcion == 2) {
             bool crea = true;
@@ -97,11 +97,11 @@ int main() {
                 cout << "Ingrese cantante" << endl;
                 cin >> cantante;
                 i++;
-                // Se crea una nueva instancia con los datos que el usuario proporciono para Musica y después se añade a la miTeca. 
+                // Se crea una nueva instancia con los datos que el usuario proporciono para Musica y después se añade a la miTeca.
                 Musica nuevaCancion(titulo,iD,genero,cantante);
                 miTeca.agregarCancion(nuevaCancion);
 
-              
+
                 // Se pregunta si quiere añadir otra canción
                 cout << "Quieres poner otra cancion? (1 = si, 0 = no)" << endl;
                 cin >> opcion;
@@ -109,7 +109,7 @@ int main() {
                     crea = false;
                 }
             }
-        } 
+        }
         //Si el usuario elige la opcion 3
         else if (opcion == 3) {
             bool crea_pelicula = true;
@@ -129,7 +129,7 @@ int main() {
                 Pelicula nuevaPelicula(titulo,iD,genero,director);
                 miTeca.agregarPelicula(nuevaPelicula);
 
-                
+
                 // Se pregunta si quiere crear otra pelicula
                 cout << "Quieres poner otra pelicula? (1 = si, 0 = no)" << endl;
                 cin >> opcion;
@@ -137,26 +137,26 @@ int main() {
                     crea_pelicula = false;
                 }
             }
-        } 
+        }
         else if (opcion == 4) {
-            // Se imprimen todas las canciones en el vector de musica. 
+            // Se imprimen todas las canciones en el vector de musica.
             for (auto& cancion : musica) {
                 cout << "El titulo de la cancion es: " << cancion.getTitulo() << ". El cantante de esa cancion es: " << cancion.getCantante() << endl;
             }
-        } 
+        }
         else if (opcion == 5) {
             // Se imprimen todos los usuarios en el vector de usuario
             for (auto& usuario : usuarios) {
                 cout << "El nombre del usuario es: " << usuario.getNombre() << ". El nombre de usuario es: " << usuario.getNomUsuario() << ". La edad del usuario es: " << usuario.getEdad() << endl;
             }
-        } 
+        }
         else if (opcion == 6) {
             // Se imprimen todas las peliculas en el vector de pelicula.
             for (auto& pelicula : peliculas) {
                 cout << "El titulo de la película es: " << pelicula.getTitulo() << ". El director de la pelicula es: " << pelicula.getDirector() << endl;
             }
 
-        } 
+        }
         else if (opcion == 7){
             // Se muestran todos los instancias creadas por catalogo.
             miTeca.mostrarCatalogoP();
@@ -167,7 +167,7 @@ int main() {
             // Ingresar la pelicula a buscar
             cout << "Ingresa el titulo de la pelicula a buscar: " << endl;
             cin >> encontrar;
-            miTeca.buscarPelicula(encontrar); 
+            miTeca.buscarPelicula(encontrar);
         }
         else if (opcion == 9){
             //Ingresar la cancion a buscar
@@ -184,9 +184,9 @@ int main() {
         else if (opcion == 11) {
             // Se sale del programa
             sigue = false;
-        } 
+        }
         else {
-            // Indica que la opcion ingresada es incorrecta. 
+            // Indica que la opcion ingresada es incorrecta.
             cout << "Opcion incorrecta" << endl;
         }
     }

@@ -23,7 +23,8 @@ using namespace std;
    Modificación 25 de noviembre
    Modificación 30 de noviembre
    Modificación 2 de diciembre
-   ***Reevaluar Implemento las clases en c++ siguiendo el diseño del diagrama de clases en UML.***
+   ***Favor de Reevaluar : ***
+   ***Implemento las clases en c++ siguiendo el diseño del diagrama de clases en UML.***
    ***Impemento composición (o agregación) sieguiendo mi diagrama de clases***
    ***Implemento clases apegadas a requerimientos a partir de un modelo.***
 */
@@ -35,7 +36,9 @@ int main() {
 
     bool sigue = true;
     int opcion;
+    string encontrar;
     Teca miTeca;
+    
 
     while (sigue == true) {
         // Usuario elige que opcion quiere usar
@@ -46,7 +49,10 @@ int main() {
         cout << "Inserta 5 si quieres imprimir la lista de Usuarios" << endl;
         cout << "Inserta 6 si quieres imprimir la lista de peliculas" << endl;
         cout << "Inserta 7 si quieres mostrar el catalogo de canciones, usuarios y peliculas" << endl;
-        cout << "Inserta 8 si quieres salir" << endl;
+        cout << "Inserta 8 si quieres buscar una pelicula. " << endl;
+        cout << "Inserta 9 si quieres buscar una cancion " << endl;
+        cout << "Inserta 10 si quieres buscar un usuario" << endl;
+        cout << "Inserta 11 si quieres salir" << endl;
 
         cin >> opcion;
 
@@ -62,11 +68,12 @@ int main() {
                 cin >> edad;
                 cout << "Ingresa tu nombre de usuario (sin espacios): " << endl;
                 cin >> nombre_usuario;
+                i++;
                 // Se crea una instancia de usuario y despues de añade a la miTeca.
                 Usuario nuevoUsuario(nombre,edad,nombre_usuario);
                 miTeca.agregarUsuario(nuevoUsuario);
 
-                i++;
+              
                 //Se pregunta se quiere añadir otro usuario
                 cout << "Quieres agregar otro usuario? (1 = si, 0 = no)" << endl;
                 cin >> otro_usuario;
@@ -89,11 +96,12 @@ int main() {
                 cin >> genero;
                 cout << "Ingrese cantante" << endl;
                 cin >> cantante;
+                i++;
                 // Se crea una nueva instancia con los datos que el usuario proporciono para Musica y después se añade a la miTeca. 
                 Musica nuevaCancion(titulo,iD,genero,cantante);
                 miTeca.agregarCancion(nuevaCancion);
 
-                i++;
+              
                 // Se pregunta si quiere añadir otra canción
                 cout << "Quieres poner otra cancion? (1 = si, 0 = no)" << endl;
                 cin >> opcion;
@@ -116,11 +124,12 @@ int main() {
                 cin >> genero;
                 cout << "Ingrese director: " << endl;
                 cin >> director;
+                i++;
                 //Con los datos que el usuario añadio se crea una instancia de pelicula que será añadida a miTeca
                 Pelicula nuevaPelicula(titulo,iD,genero,director);
                 miTeca.agregarPelicula(nuevaPelicula);
 
-                i++;
+                
                 // Se pregunta si quiere crear otra pelicula
                 cout << "Quieres poner otra pelicula? (1 = si, 0 = no)" << endl;
                 cin >> opcion;
@@ -154,7 +163,25 @@ int main() {
             miTeca.mostrarCatalogoC();
             miTeca.mostrarCatalogoU();
         }
-        else if (opcion == 8) {
+        else if(opcion == 8){
+            // Ingresar la pelicula a buscar
+            cout << "Ingresa el titulo de la pelicula a buscar: " << endl;
+            cin >> encontrar;
+            miTeca.buscarPelicula(encontrar); 
+        }
+        else if (opcion == 9){
+            //Ingresar la cancion a buscar
+            cout << "Ingresa el titulo de la cancion a buscar: " << endl;
+            cin >> encontrar;
+            miTeca.buscarCancion(encontrar);
+        }
+        else if (opcion == 10){
+            //Ingresar el usuario a buscar
+            cout << "Ingresa el nombre del usuario a buscar: " << endl;
+            cin >> encontrar;
+            miTeca.buscarUsuario(encontrar);
+        }
+        else if (opcion == 11) {
             // Se sale del programa
             sigue = false;
         } 

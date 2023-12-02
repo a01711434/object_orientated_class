@@ -78,6 +78,51 @@ class Teca {
                 cout << "-------------------------" << endl;
             }
         }
+        void buscarPelicula(string& titulo) {
+            bool encontrada = false;
+            for (auto& pelicula : peliculas) {
+                if (pelicula.getTitulo() == titulo) {
+                    cout << "Pelicula encontrada: " << endl;
+                    pelicula.imprimePelicula();
+                    encontrada = true;
+                    break;
+                }
+            }
+
+            if (encontrada = false) {
+                cout << "No se encontro ninguna pelicula con el titulo: " << titulo << endl;
+            }
+        }
+        void buscarCancion(string& titulo) {
+            bool encontrada = false;
+            for (auto& cancion : musica) {
+                if (cancion.getTitulo() == titulo) {
+                    cout << "Cancion encontrada: " << endl;
+                    cancion.imprimirCancion();
+                    encontrada = true;
+                    break;
+                }
+            }
+
+            if (encontrada = false) {
+                cout << "No se encontro ninguna cancion con ese titulo: " << titulo << endl;
+            }
+        }
+        void buscarUsuario(string& nombre){
+            bool encontrada = false;
+            for (auto& usuario : usuarios){
+                if (usuario.getNombre() == nombre){
+                    cout << "Usuario encontrado: " << endl;
+                    usuario.imprimirUsuario();
+                    encontrada = true;
+                    break;
+                }
+            }
+
+            if (encontrada = false){
+                cout << "No se encontro ningun usuario con ese nombre: " << nombre << endl;
+            }
+        }
 
 };
 #endif 

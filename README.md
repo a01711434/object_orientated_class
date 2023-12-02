@@ -7,13 +7,11 @@ El problema a abordar es la gestión efectiva de un negocio de alquiler de pelí
 ## Funcionalidades
 
 - **Catálogo de Películas:** Permite visualizar y encontrar en el catálogo una película.
-- **Agregar Películas:** Permite a los usuarios agregar nuevas películas al catálogo, ingresando detalles como título, director y ID.
-- **Registro de Clientes:** Permite agregar nuevos clientes al sistema, incluyendo su información.
 - **Catálogo de Usuarios:** Permite visualizar los usuarios en el sistema y buscar algun usuario por medio de su nombre.
 - **Catálogo de Canciones:** Permite visualizar las canciones en el catálogo con toda su información y buscar alguna cancion por medio de su titulo
+- **Agregar Películas:** Permite a los usuarios agregar nuevas películas al catálogo, ingresando detalles como título, director y ID.
+- **Agregar Clientes:** Permite agregar nuevos clientes al sistema, incluyendo su información.
 - **Agregar Canciones:** Permite agregar canciones.
-- 
-
 
 ## Instrucciones de Uso
 1.  **Agregar un Usuario:**

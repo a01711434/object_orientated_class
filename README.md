@@ -45,9 +45,9 @@ El problema a abordar es la gestión efectiva de un negocio de alquiler de pelí
     - Selecciona la opcion 7.
     - Verás el catalogo de canciones, usuarios y peliculas que están en el sistema.
 8.  **Buscar una película:**
-   - Selecciona la opcion 8.
-   - Ingresarás el nombre de la pelicula a buscar.
-   - Verás si se encuentra en el sistema. 
+    - Selecciona la opcion 8.
+    - Ingresarás el nombre de la pelicula a buscar.
+    - Verás si se encuentra en el sistema. 
 9.  **Buscar una canción:**
      - Selecciona la opción 9.
      - Ingresarás el nombre de la canción a buscar.

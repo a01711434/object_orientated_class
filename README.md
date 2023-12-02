@@ -1,4 +1,8 @@
 # Programa de Gestión de VideoTeca
+##**Volver a Revisaar**:
+***- Implemento las clases en c++ siguiendo el diseño del diagrama de clases en UML.***
+***- Impemento composición (o agregación) sieguiendo mi diagrama de clases***
+***- Implemento clases apegadas a requerimientos a partir de un modelo.***
 
 ## Descripción del Problema
 

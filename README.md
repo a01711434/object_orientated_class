@@ -57,7 +57,7 @@ El problema a abordar es la gestión efectiva de un negocio de alquiler de pelí
      - Ingresarás el nombre del usuario a buscar.
      - Verás si se encuentra en el sistema.
 11.  **Salir del Programa:** 
-    -   Selecciona la opción 11.
+    -  Selecciona la opción 11.
     -   El programa se cerrará.
 
 Nota: El programa no acepta entradas con espacio, por lo que favor de ingresar solamente una palabra o separarla con guion bajo. 

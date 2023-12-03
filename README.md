@@ -65,3 +65,4 @@ El problema a abordar es la gestión efectiva de un negocio de alquiler de pelí
     -   El programa se cerrará.
 
 Nota: El programa no acepta entradas con espacio, por lo que favor de ingresar solamente una palabra o separarla con guion bajo. 
+Para que el programa funcione correctamente, favor de descargar los archivos y ponerlos en una carpeta todos junto con el main. 

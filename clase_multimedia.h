@@ -11,6 +11,12 @@ class Multimedia {
         string titulo;
         int iD;
         string genero;
+         int numero_2;
+         int numero_2;
+         int numero_2;
+
+
+
     public: 
         Multimedia(){}; // Constructor por default
         // Constructor con parametros
